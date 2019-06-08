@@ -1,0 +1,40 @@
+body {
+	min-height: 1000px;
+	font-family: Avenir;
+	font-weight: 300;
+    background-color: #404040;
+    color: white;
+}
+
+.cardContainer {
+	column-width: 300px;
+	column-gap: 15px;
+	width: 100%;
+	max-width: 1200px;
+	margin: 50px auto;
+}
+
+div.cardContainer .card {
+	-webkit-column-break-inside: avoid;
+	background: #202020;
+	margin: 15px auto;
+	padding: 15px;
+	padding-bottom: 10px;
+	border: 2px solid gray;
+    transition: opacity .2s ease-in-out;
+    cursor: pointer;
+}
+
+div.cardContainer .card:nth-child(1) {
+    margin-top: 0px;
+}
+
+div.cardContainer .card .caption {
+	font-size: 16px;
+	color: white;
+    line-height: 1.5;
+}
+
+div.cardContainer:hover .card:not(:hover) {
+	opacity: 0.8;
+}
