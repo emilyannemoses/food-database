@@ -13,7 +13,7 @@ window.onload = () => {
             categories[obj.Category].push(obj)
         })
         addItem.innerHTML = `
-            <input type="text" placeholder="Category" id="categoryInput"/><input type="text" placeholder="Food" id="foodInput"/><input type="number" placeholder="Amount" id="amountInput"/><br/><input type="submit" value="Submit" onClick="newItem()">
+            <input type="text" placeholder="Category" id="categoryInput" /><input type="text" placeholder="Food" id="foodInput" /><input type="number" min="1" placeholder="Amount" id="amountInput" /><br/><input type="submit" value="Submit" onClick="newItem()">
         `
         for (let key in categories) {
             cardContainer.innerHTML += `
@@ -38,7 +38,7 @@ const increment = (f, id) => {
     let value = parseInt(amt.innerHTML);
     value = (f == 'decrease') ? value - 1 : value + 1;
     amt.innerHTML = value;
-    if (value == 0) {
+    if (value < 1) {
         deleteRow(id);
     } else {
         _gas.crud( 'UPDATE' , 'row', {
@@ -58,6 +58,10 @@ const newItem = () => {
     let catVal = cat.value;
     let nameVal = name.value;
     let amtVal = amt.value;
+    let removeZero;
+    if (amtVal == 0) {
+        removeZero = amtVal.replace(amtVal, 1);
+    }
     let catUpper = catVal.replace(catVal[0], catVal[0].toUpperCase());
     let nameUpper = nameVal.replace(nameVal[0], nameVal[0].toUpperCase());
     _gas.crud( "CREATE" , "row", {
@@ -65,7 +69,7 @@ const newItem = () => {
         content: {
             Category: catUpper,
             Name: nameUpper,
-            Amount: amtVal,
+            Amount: removeZero || amtVal,
         }
     })
     .then( payload => { payload });
