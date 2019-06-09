@@ -91,14 +91,6 @@ const newItem = () => {
     }, 2000)
 }
 
-const addOne = (key) => {
-    addItem.style.paddingTop = '100px';
-    addItem.style.paddingBottom = '100px';
-    categoryInput.setAttribute('disabled', true);
-    categoryInput.value = `${key}`;
-    foodInput.focus();
-}
-
 const deleteRow = (id) => {
     _gas.crud( 'DELETE' , 'row', {
         sheetName: 'Sheet1',
@@ -106,6 +98,14 @@ const deleteRow = (id) => {
     }).then( payload => { payload })
     const remove = document.getElementById('removeThis'+id);
     remove.style.textDecoration = 'line-through';
+}
+
+const addOne = (key) => {
+    addItem.style.paddingTop = '100px';
+    addItem.style.paddingBottom = '100px';
+    categoryInput.setAttribute('disabled', true);
+    categoryInput.value = `${key}`;
+    foodInput.focus();
 }
 
 const resetPage = () => {
