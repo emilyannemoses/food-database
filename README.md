@@ -2,7 +2,7 @@
 
 Live site: https://eamoses.github.io/food-database/
 
-I hooked it up to a Google Sheet that reads the types of foods I currently have in my kitchen and displays them according to category.
+I hooked it up to a Google Sheet that holds the types of foods I currently have in my kitchen, and the amounts of each food, and displays them according to category.
 
 I plugged in the functionality so that when you check one off, it strikes a line thru and removes it from the Google Sheet permanently.
 
