@@ -77,7 +77,6 @@ div.cardContainer .card {
 	margin: 15px auto;
 	padding: 10px;
 	border: 2px solid gray;
-	text-align: center;
 	transition: opacity .2s ease-in-out;
 	cursor: pointer;
 }
@@ -89,7 +88,6 @@ div.cardContainer .card:nth-child(1) {
 div.cardContainer .card .caption {
 	font-size: 16px;
 	color: white;
-	line-height: 1.5;
 }
 
 div.cardContainer:hover .card:not(:hover) {
