@@ -21,12 +21,21 @@ window.onload = () => {
                 </div>
             `
             categories[key].forEach(function(food){
+                const rowId = JSON.parse(food._Id)._Id
                 const card = document.getElementById('card'+key);
                 card.innerHTML += `
-                <input type="checkbox" style="float:left"/> <div>${food.Name} | ${food.Amount}</div>
+                    <div id="removeThis${rowId}"><input type="checkbox" onClick="deleteRow('${rowId}')" style="float:left"/> <div>${food.Name} | ${food.Amount}</div></div>
                 `
             })
         }
     })
 
+}
+const deleteRow = (id) => {
+    _gas.crud( "DELETE" , "row", {
+        sheetName: 'Sheet1',
+        _Id: id,
+    }).then( payload => { console.log(payload) })
+    const remove = document.getElementById('removeThis'+id);
+    remove.style.display = 'none';
 }
