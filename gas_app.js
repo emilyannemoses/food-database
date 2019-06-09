@@ -24,7 +24,7 @@ window.onload = () => {
                 const rowId = JSON.parse(food._Id)._Id
                 const card = document.getElementById('card'+key);
                 card.innerHTML += `
-                    <div id="removeThis${rowId}"><div onClick="deleteRow('${rowId}')" style="float:left">✕ &nbsp;</div><div>${food.Name}&nbsp;&nbsp;|&nbsp;&nbsp;<span id="amt${rowId}">${food.Amount}</span><span id="increment" onClick="increment('increase', '${rowId}')" style="float:right">&nbsp;&#8593;</span><span style="float:right" id="decrement" onClick="increment('decrease', '${rowId}')">&nbsp;&#8595;</span></div></div>
+                    <div id="removeThis${rowId}"><div onClick="deleteRow('${rowId}')" style="float:left">✕ &nbsp;</div><div>${food.Name}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span id="amt${rowId}">${food.Amount}</span><span id="increment" onClick="increment('increase', '${rowId}')" style="float:right">&nbsp;&#8593;</span><span style="float:right" id="decrement" onClick="increment('decrease', '${rowId}')">&nbsp;&#8595;</span></div></div>
                 `
             })
         }

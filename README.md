@@ -6,7 +6,7 @@ Using the GAS Stack API, I hooked this up to a Google Sheet that holds the types
 
 When you check one food off, it strikes a line thru on the UI and removes it from the Google Sheet permanently.
 
-I will also be able to update the sheet with the amounts of each type of food.
+It is possible to update the sheet with the amounts of each type of food.
 
 Finally, being able to add foods via the UI instead of only having the option to update the Google Sheet would be ideal.
 
