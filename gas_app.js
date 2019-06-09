@@ -55,8 +55,8 @@ const newItem = () => {
     const cat = document.getElementById('categoryInput')
     const name = document.getElementById('foodInput')
     const amt = document.getElementById('amountInput')
-    let catVal = cat.value;
-    let nameVal = name.value;
+    let catVal = cat.value.toLowerCase();
+    let nameVal = name.value.toLowerCase();
     let amtVal = amt.value;
     let removeZero;
     if (amtVal == 0) {
