@@ -8,7 +8,7 @@ When you check one food off, it strikes a line thru on the UI and removes it fro
 
 It is possible to update the sheet with the amounts of each type of food.
 
-Finally, being able to add foods via the UI instead of only having the option to update the Google Sheet would be ideal.
+I can add foods to the Google Spreadsheet DB via the UI.
 
 Also, it would be neat to use the Unsplash API to frequently display a different food picture as the background.
 
