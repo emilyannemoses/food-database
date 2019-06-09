@@ -1,5 +1,5 @@
 html { 
-	background: url(https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60) no-repeat center center fixed; 
+	background: url(https://images.unsplash.com/photo-1532980400857-e8d9d275d858?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=900&q=60) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -12,9 +12,44 @@ body {
 	color: white;
 }
 
+input[type=text] {
+	border: 0;
+	padding: 0;
+	margin: 10px;
+	background: transparent;
+	letter-spacing: .5em;
+	font: 20px Avenir;
+	text-align: center;
+	border-bottom: 2px solid white;
+}
+
+input[type=submit] {
+	border: 2px solid white;
+	background-color: rgba(255, 255, 255, 0.4);
+	color: #202020;
+	letter-spacing: 1em;
+	width: 60%;
+	cursor: pointer;
+	text-shadow: 0px 1px white;
+}
+
+input::placeholder {
+	text-align: center;
+	color: white;
+	text-shadow: 0px 1px #202020;
+  }
+
 h4 {
 	margin-block-start: .5em;
     margin-block-end: .5em;
+}
+
+.newItem {
+	width: 90%;
+	margin: auto;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.3);
+	padding-bottom: 20px;
 }
 
 .cardContainer {

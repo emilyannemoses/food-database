@@ -1,7 +1,6 @@
 var _gas = new GAS('https://script.google.com/macros/s/AKfycbyQcPNaZG-xO8gZapSNUDvrvCGnTSHhKcks_ZBJWrE70MJIEwY/exec')
 
 window.onload = () => {
-
     _gas.crud( 'READ' , 'sheet', {
     sheetName: 'Sheet1',
     }).then(payload => payload)
@@ -13,6 +12,9 @@ window.onload = () => {
             }
             categories[obj.Category].push(obj)
         })
+        addItem.innerHTML = `
+            <input type="text" placeholder="Category" id="categoryInput"/><input type="text" placeholder="Food" id="foodInput"/><input type="text" placeholder="Amount" id="amountInput"/><br/><input type="submit" value="Submit" onClick="newItem()">
+        `
         for (let key in categories) {
             cardContainer.innerHTML += `
                 <div class="card" id="card${key}">
@@ -32,7 +34,7 @@ window.onload = () => {
 }
 
 const increment = (f, id) => {
-    const amt = document.getElementById('amt'+id);
+    let amt = document.getElementById('amt'+id);
     let value = parseInt(amt.innerHTML);
     value = (f == 'decrease') ? value - 1 : value + 1;
     amt.innerHTML = value;
@@ -43,10 +45,33 @@ const increment = (f, id) => {
             sheetName: 'Sheet1',
             _Id: id,
             content: {
-                Amount: value
+                Amount: "'"+value
             }
         }).then( payload => { payload });
     }
+}
+
+const newItem = () => {
+    const cat = document.getElementById('categoryInput')
+    const name = document.getElementById('foodInput')
+    const amt = document.getElementById('amountInput')
+    let catVal = cat.value;
+    let nameVal = name.value;
+    let amtVal = amt.value;
+    let catUpper = catVal.replace(catVal[0], catVal[0].toUpperCase());
+    let nameUpper = nameVal.replace(nameVal[0], nameVal[0].toUpperCase());
+    _gas.crud( "CREATE" , "row", {
+        sheetName: 'Sheet1',
+        content: {
+            Category: catUpper,
+            Name: nameUpper,
+            Amount: amtVal,
+        }
+    })
+    .then( payload => { payload });
+    setTimeout(function() {
+        window.history.go();
+    }, 2000)
 }
 
 const deleteRow = (id) => {
