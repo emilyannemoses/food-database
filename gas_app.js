@@ -13,12 +13,20 @@ window.onload = () => {
             categories[obj.Category].push(obj)
         })
         addItem.innerHTML = `
-            <input type="text" placeholder="Category" id="categoryInput" /><input type="text" placeholder="Food" id="foodInput" /><input type="number" min="1" placeholder="Amount" id="amountInput" /><br/><input type="submit" value="Submit" onClick="newItem()">
+            <input type="text" placeholder="Category" id="categoryInput" />
+            <input type="text" placeholder="Food" id="foodInput" />
+            <input type="number" min="1" placeholder="Amount" id="amountInput" />
+            <input type="submit" value="Submit" onClick="newItem()" id="submitButton">
         `
         for (let key in categories) {
             cardContainer.innerHTML += `
                 <div class="card" id="card${key}">
-                    <h4>${key}</h4>
+                    <span class="heading">
+                        ${key} 
+                        <span onClick="addOne('${key}')" style="float:right;color:green;">
+                            +
+                        </span>
+                    </span>
                     <hr>
                 </div>
             `
@@ -26,7 +34,24 @@ window.onload = () => {
                 const rowId = JSON.parse(food._Id)._Id
                 const card = document.getElementById('card'+key);
                 card.innerHTML += `
-                    <div id="removeThis${rowId}"><div onClick="deleteRow('${rowId}')" style="float:left">✕ &nbsp;</div><div>${food.Name} <span> | </span> <span style="text-align:justify;" id="amt${rowId}">${food.Amount}</span><span id="increment" onClick="increment('increase', '${rowId}')" style="float:right">&nbsp;&#8593;</span><span style="float:right" id="decrement" onClick="increment('decrease', '${rowId}')">&nbsp;&#8595;</span></div></div>
+                    <div id="removeThis${rowId}">
+                        <span id="amt${rowId}">
+                            ${food.Amount}
+                        </span>
+                        <span> 
+                            | 
+                        </span> 
+                        ${food.Name} 
+                        <span style="float:left;color:greenyellow;" id="increment" onClick="increment('increase', '${rowId}')">
+                            &nbsp;&#8593;
+                        </span>
+                        <span style="float:left;color:orangered;" id="decrement" onClick="increment('decrease', '${rowId}')">
+                            &#8595;&nbsp;
+                        </span>
+                        <span onClick="deleteRow('${rowId}')" style="float:right;color:firebrick;font-size:smaller;">
+                            remove
+                        </span>
+                    </div>
                 `
             })
         }
@@ -76,6 +101,21 @@ const newItem = () => {
     setTimeout(function() {
         window.history.go();
     }, 2000)
+}
+
+const addOne = (key) => {
+    zoomDiv();
+    categoryInput.value = `${key}`
+}
+
+const zoomDiv = () => {
+    addItem.style.paddingTop = '150px';
+    addItem.style.paddingBottom = '150px';
+    categoryInput.setAttribute('disabled', true);
+    categoryInput.style.verticalAlign = 'middle';
+    foodInput.style.verticalAlign = 'middle';
+    amountInput.style.verticalAlign = 'middle';
+    submitButton.style.verticalAlign = 'middle';
 }
 
 const deleteRow = (id) => {

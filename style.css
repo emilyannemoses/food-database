@@ -50,7 +50,9 @@ input::placeholder {
 	text-shadow: 0px 1px #202020;
   }
 
-h4 {
+.heading {
+	font-size: 18px;
+	font-weight: 600;
 	margin-block-start: .5em;
     margin-block-end: .5em;
 }
@@ -66,7 +68,7 @@ h4 {
 .cardContainer {
 	column-width: 250px;
 	column-gap: 15px;
-	width: 100%;
+	width: 90%;
 	max-width: 1200px;
 	margin: 50px auto;
 }
