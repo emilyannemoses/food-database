@@ -23,6 +23,17 @@ input[type=text] {
 	border-bottom: 2px solid white;
 }
 
+input[type=number] {
+	border: 0;
+	padding: 0;
+	margin: 10px;
+	background: transparent;
+	letter-spacing: .5em;
+	font: 20px Avenir;
+	text-align: center;
+	border-bottom: 2px solid white;
+}
+
 input[type=submit] {
 	border: 2px solid white;
 	background-color: rgba(255, 255, 255, 0.4);

@@ -13,7 +13,7 @@ window.onload = () => {
             categories[obj.Category].push(obj)
         })
         addItem.innerHTML = `
-            <input type="text" placeholder="Category" id="categoryInput"/><input type="text" placeholder="Food" id="foodInput"/><input type="text" placeholder="Amount" id="amountInput"/><br/><input type="submit" value="Submit" onClick="newItem()">
+            <input type="text" placeholder="Category" id="categoryInput"/><input type="text" placeholder="Food" id="foodInput"/><input type="number" placeholder="Amount" id="amountInput"/><br/><input type="submit" value="Submit" onClick="newItem()">
         `
         for (let key in categories) {
             cardContainer.innerHTML += `
