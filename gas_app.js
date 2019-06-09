@@ -24,7 +24,7 @@ window.onload = () => {
                 const rowId = JSON.parse(food._Id)._Id
                 const card = document.getElementById('card'+key);
                 card.innerHTML += `
-                    <div id="removeThis${rowId}"><input type="checkbox" onClick="deleteRow('${rowId}')" style="float:left"/> <div>${food.Name} | ${food.Amount}</div></div>
+                    <div id="removeThis${rowId}"><div onClick="deleteRow('${rowId}')" style="float:left">✕ &nbsp;</div> <div>${food.Name} | ${food.Amount}</div></div>
                 `
             })
         }
@@ -37,5 +37,5 @@ const deleteRow = (id) => {
         _Id: id,
     }).then( payload => { console.log(payload) })
     const remove = document.getElementById('removeThis'+id);
-    remove.style.display = 'none';
+    remove.style.textDecoration = 'line-through';
 }
