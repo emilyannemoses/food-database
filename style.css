@@ -91,7 +91,6 @@ div.cardContainer .card {
 	padding: 10px;
 	border: 2px solid gray;
 	transition: opacity .2s ease-in-out;
-	cursor: pointer;
 }
 
 div.cardContainer .card:nth-child(1) {
@@ -105,4 +104,31 @@ div.cardContainer .card .caption {
 
 div.cardContainer:hover .card:not(:hover) {
 	opacity: 0.8;
+}
+
+.plusClass {
+	float: right;
+	color: green;
+	cursor: pointer;
+}
+
+.decreaseClass {
+	color: orangered;
+	cursor: pointer;
+}
+
+.increaseClass {
+	color: greenyellow;
+	cursor: pointer;
+}
+
+.deleteClass {
+	float: right;
+	color: firebrick;
+	font-size: 5px;
+	cursor: pointer;
+}
+
+.hover:hover {
+	color: rgb(255,255,225);
 }

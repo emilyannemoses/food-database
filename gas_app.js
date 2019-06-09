@@ -24,9 +24,7 @@ window.onload = () => {
                 <div class="card" id="card${key}">
                     <span class="heading">
                         ${key} 
-                        <span onClick="addOne('${key}')" style="float:right;color:green;">
-                            +
-                        </span>
+                        <span onClick="addOne('${key}')" class="plusClass hover">+</span>
                     </span>
                     <hr>
                 </div>
@@ -36,20 +34,9 @@ window.onload = () => {
                 const card = document.getElementById('card'+key);
                 card.innerHTML += `
                     <div id="removeThis${rowId}">
-                        <span id="amt${rowId}">
-                            ${food.Amount}
-                        </span>
-                        <span> 
-                            | 
-                        </span> 
-                        ${food.Name} 
-                        <span style="float:left;color:greenyellow;" id="increment" onClick="increment('increase', '${rowId}')">
-                            &#8593;&nbsp;&nbsp;&nbsp;
-                        </span>
-                        <span style="float:left;color:orangered;" id="decrement" onClick="increment('decrease', '${rowId}')">
-                            &#8595;&nbsp;&nbsp;
-                        </span>
-                        <span onClick="deleteRow('${rowId}')" style="float:right;color:firebrick;font-size:smaller;">
+                        <span id="decrement" onClick="increment('decrease', '${rowId}')" class="decreaseClass hover">&#8595;&nbsp;&nbsp;</span><span id="amt${rowId}">${food.Amount}</span><span id="increment" onClick="increment('increase', '${rowId}')" class="increaseClass hover">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</span>
+                        <span>${food.Name}</span>
+                        <span onClick="deleteRow('${rowId}')" class="deleteClass hover">
                             remove
                         </span>
                     </div>
