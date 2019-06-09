@@ -92,15 +92,11 @@ const newItem = () => {
 }
 
 const addOne = (key) => {
-    zoomDiv();
-    categoryInput.value = `${key}`;
-    foodInput.focus();
-}
-
-const zoomDiv = () => {
     addItem.style.paddingTop = '100px';
     addItem.style.paddingBottom = '100px';
     categoryInput.setAttribute('disabled', true);
+    categoryInput.value = `${key}`;
+    foodInput.focus();
 }
 
 const deleteRow = (id) => {
