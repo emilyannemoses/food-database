@@ -17,6 +17,7 @@ window.onload = () => {
             <input type="text" placeholder="Food" id="foodInput" />
             <input type="number" min="1" placeholder="Amount" id="amountInput" />
             <input type="submit" value="Submit" onClick="newItem()" id="submitButton">
+            <input type="reset" value="Reset" onClick="resetPage()" id="resetButton">
         `
         for (let key in categories) {
             cardContainer.innerHTML += `
@@ -109,8 +110,8 @@ const addOne = (key) => {
 }
 
 const zoomDiv = () => {
-    addItem.style.paddingTop = '150px';
-    addItem.style.paddingBottom = '150px';
+    addItem.style.paddingTop = '100px';
+    addItem.style.paddingBottom = '100px';
     categoryInput.setAttribute('disabled', true);
     categoryInput.style.verticalAlign = 'middle';
     foodInput.style.verticalAlign = 'middle';
@@ -125,4 +126,8 @@ const deleteRow = (id) => {
     }).then( payload => { payload })
     const remove = document.getElementById('removeThis'+id);
     remove.style.textDecoration = 'line-through';
+}
+
+const resetPage = () => {
+    window.history.go();
 }
