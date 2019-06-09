@@ -13,3 +13,7 @@ I can add foods to the Google Spreadsheet DB via the UI.
 Also, it would be neat to use the Unsplash API to frequently display a different food picture as the background.
 
 It’s helpful as long as I keep it up to date when I go shopping!
+
+A few rough patches include handling the data as-is when it comes in from the Google Spreadsheet. The API I'm using is attaching a `'` character to each cell, and I've had to handle the character to make sure the UI "clumps" related data together regardless of how the user types it in.
+
+Also with handling user input - since the inputs were allowing me to enter zeros as the "amount" I handled that in the `update` so it would be impossible to enter a food amount as `0`
