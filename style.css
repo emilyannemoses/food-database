@@ -77,7 +77,7 @@ input::placeholder {
 }
 
 .cardContainer {
-	column-width: 250px;
+	column-width: 300px;
 	column-gap: 15px;
 	width: 90%;
 	max-width: 1200px;

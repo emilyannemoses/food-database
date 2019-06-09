@@ -44,10 +44,10 @@ window.onload = () => {
                         </span> 
                         ${food.Name} 
                         <span style="float:left;color:greenyellow;" id="increment" onClick="increment('increase', '${rowId}')">
-                            &nbsp;&#8593;
+                            &#8593;&nbsp;&nbsp;&nbsp;
                         </span>
                         <span style="float:left;color:orangered;" id="decrement" onClick="increment('decrease', '${rowId}')">
-                            &#8595;&nbsp;
+                            &#8595;&nbsp;&nbsp;
                         </span>
                         <span onClick="deleteRow('${rowId}')" style="float:right;color:firebrick;font-size:smaller;">
                             remove
@@ -106,7 +106,8 @@ const newItem = () => {
 
 const addOne = (key) => {
     zoomDiv();
-    categoryInput.value = `${key}`
+    categoryInput.value = `${key}`;
+    foodInput.focus();
 }
 
 const zoomDiv = () => {
