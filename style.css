@@ -7,14 +7,18 @@ html {
 }
 
 body {
-	min-height: 1000px;
 	font-family: Avenir;
 	font-weight: 300;
 	color: white;
 }
 
+h4 {
+	margin-block-start: .5em;
+    margin-block-end: .5em;
+}
+
 .cardContainer {
-	column-width: 300px;
+	column-width: 250px;
 	column-gap: 15px;
 	width: 100%;
 	max-width: 1200px;
@@ -25,9 +29,9 @@ div.cardContainer .card {
 	-webkit-column-break-inside: avoid;
 	background: #202020;
 	margin: 15px auto;
-	padding: 15px;
-	padding-bottom: 10px;
+	padding: 10px;
 	border: 2px solid gray;
+	text-align: center;
 	transition: opacity .2s ease-in-out;
 	cursor: pointer;
 }
