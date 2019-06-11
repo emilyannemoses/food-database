@@ -85,12 +85,13 @@ input::placeholder {
 }
 
 div.cardContainer .card {
-	-webkit-column-break-inside: avoid;
+	-webkit-column-break-inside: avoid !important;
 	background: #202020;
 	margin: 15px auto;
 	padding: 10px;
 	border: 2px solid gray;
 	transition: opacity .2s ease-in-out;
+	overflow: scroll;
 }
 
 div.cardContainer .card:nth-child(1) {
@@ -125,7 +126,7 @@ div.cardContainer:hover .card:not(:hover) {
 .deleteClass {
 	float: right;
 	color: firebrick;
-	font-size: 5px;
+	font-size: 12px;
 	cursor: pointer;
 }
 
