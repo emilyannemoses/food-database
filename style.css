@@ -4,12 +4,14 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	font-family: Avenir;
 }
 
 body {
 	font-family: Avenir;
 	font-weight: 300;
 	color: white;
+	margin: 0;
 }
 
 input[type=text] {

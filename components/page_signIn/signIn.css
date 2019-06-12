@@ -1,0 +1,28 @@
+#signIn {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.signInBox {
+  width: 90%;
+	margin: auto;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.2);
+	padding: 50px;
+}
+
+.signInButton {
+  height: 50px;
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: Avenir;
+  font-size: 25px;
+  letter-spacing: .3em;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 0px #202020;
+  cursor: pointer;
+}
+
+.googLink {
+  text-decoration: underline;
+}

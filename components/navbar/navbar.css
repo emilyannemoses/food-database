@@ -1,0 +1,24 @@
+#navbar {
+    padding: 5px;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    text-align: center;
+}
+
+a {
+    padding: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.signOut {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.authStat {
+    font-size: 10px;
+}
