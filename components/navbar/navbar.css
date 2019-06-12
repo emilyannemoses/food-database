@@ -1,5 +1,5 @@
 #navbar {
-    padding: 5px;
+    font-size: 14px;
 }
 
 .navbar {
@@ -9,21 +9,6 @@
 }
 
 a {
-    padding: 20px;
     text-decoration: none;
     color: white;
-}
-
-.signOut {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.signIn {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.authStat {
-    font-size: 10px;
 }

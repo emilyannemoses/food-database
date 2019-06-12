@@ -135,3 +135,13 @@ div.cardContainer:hover .card:not(:hover) {
 .hover:hover {
 	color: rgb(255,255,225);
 }
+
+#sign-in-or-out-button {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#revoke-access-button {
+    text-decoration: underline;
+    cursor: pointer;
+}
