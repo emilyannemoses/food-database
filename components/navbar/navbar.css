@@ -19,6 +19,11 @@ a {
     cursor: pointer;
 }
 
+.signIn {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .authStat {
     font-size: 10px;
 }
