@@ -51,27 +51,27 @@ if (GoogleAuth.isSignedIn.get()) {
 }
 
 function revokeAccess() {
-GoogleAuth.disconnect();
+    GoogleAuth.disconnect();
 }
 
 function setSigninStatus(isSignedIn) {
-var user = GoogleAuth.currentUser.get();
-// First name: user.w3.ofa
-// Last name: user.w3.wea
-// Full name: user.w3.ig
-var isAuthorized = user.hasGrantedScopes(SCOPE);
-if (isAuthorized) {
-    $('#sign-in-or-out-button').html('Sign out');
-    $('#revoke-access-button').html('Revoke access');
-    $('#revoke-access-button').css('display', 'inline-block');
-    $('#auth-status').html(`${user.w3.ofa}, you are currently signed in and have granted access to this app.`);
-} else {
-    $('#sign-in-or-out-button').html('Sign In');
-    $('#revoke-access-button').css('display', 'none');
-    $('#auth-status').html('You have not authorized this app or you are signed out.');
-}
+    var user = GoogleAuth.currentUser.get();
+    // First name: user.w3.ofa
+    // Last name: user.w3.wea
+    // Full name: user.w3.ig
+    var isAuthorized = user.hasGrantedScopes(SCOPE);
+    if (isAuthorized) {
+        $('#sign-in-or-out-button').html('Sign out');
+        $('#revoke-access-button').html('Revoke access');
+        $('#revoke-access-button').css('display', 'inline-block');
+        $('#auth-status').html(`${user.w3.ofa}, you are currently signed in and have granted access to this app.`);
+    } else {
+        $('#sign-in-or-out-button').html('Sign In');
+        $('#revoke-access-button').css('display', 'none');
+        $('#auth-status').html('You have not authorized this app or you are signed out.');
+    }
 }
 
 function updateSigninStatus(isSignedIn) {
-setSigninStatus();
+    setSigninStatus();
 }

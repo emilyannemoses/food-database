@@ -1,7 +1,6 @@
 class Navbar extends SPA {
   
   html() {
-    console.log("In Navbar: ", GoogleAuth)
     return /*html*/`
       <div class="navbar">
         <div id="auth-status" class="authStat"></div>

@@ -1,5 +1,4 @@
-var _gas = new GAS('https://script.google.com/macros/s/AKfycbyQcPNaZG-xO8gZapSNUDvrvCGnTSHhKcks_ZBJWrE70MJIEwY/exec')
-
+var _gas = new GAS('https://script.google.com/macros/s/AKfycbyQcPNaZG-xO8gZapSNUDvrvCGnTSHhKcks_ZBJWrE70MJIEwY/exec');
 _gas.crud( 'READ' , 'sheet', {
     sheetName: 'Sheet1',
 }).then(payload => payload)
