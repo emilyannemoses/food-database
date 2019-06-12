@@ -1,50 +1,48 @@
 var _gas = new GAS('https://script.google.com/macros/s/AKfycbyQcPNaZG-xO8gZapSNUDvrvCGnTSHhKcks_ZBJWrE70MJIEwY/exec')
 
-window.onload = () => {
-    _gas.crud( 'READ' , 'sheet', {
+_gas.crud( 'READ' , 'sheet', {
     sheetName: 'Sheet1',
-    }).then(payload => payload)
-    .then(data => {
-        const categories = {}
-        data.Sheet1.forEach(function(obj) {
-            if(!categories[obj.Category]) {
-                categories[obj.Category] = [];
-            }
-            categories[obj.Category].push(obj)
-        })
-        addItem.innerHTML = `
-            <input type="text" placeholder="Category" id="categoryInput" />
-            <input type="text" placeholder="Food" id="foodInput" />
-            <input type="number" min="1" placeholder="Amount" id="amountInput" />
-            <input type="submit" value="Submit" onClick="newItem()" id="submitButton">
-            <input type="reset" value="Reset" onClick="resetPage()" id="resetButton">
+}).then(payload => payload)
+.then(data => {
+    const categories = {}
+    data.Sheet1.forEach(function(obj) {
+        if(!categories[obj.Category]) {
+            categories[obj.Category] = [];
+        }
+        categories[obj.Category].push(obj)
+    })
+    addItem.innerHTML = `
+        <input type="text" placeholder="Category" id="categoryInput" />
+        <input type="text" placeholder="Item" id="foodInput" />
+        <input type="number" min="1" placeholder="Amount" id="amountInput" />
+        <input type="submit" value="Submit" onClick="newItem()" id="submitButton">
+        <input type="reset" value="Reset" onClick="resetPage()" id="resetButton">
+    `
+    for (let key in categories) {
+        cardContainer.innerHTML += `
+            <div class="card" id="card${key}">
+                <span class="heading">
+                    ${key} 
+                    <span onClick="addOne('${key}')" class="plusClass hover">+</span>
+                </span>
+                <hr>
+            </div>
         `
-        for (let key in categories) {
-            cardContainer.innerHTML += `
-                <div class="card" id="card${key}">
-                    <span class="heading">
-                        ${key} 
-                        <span onClick="addOne('${key}')" class="plusClass hover">+</span>
+        categories[key].forEach(function(food){
+            const rowId = JSON.parse(food._Id)._Id
+            const card = document.getElementById('card'+key);
+            card.innerHTML += `
+                <div id="removeThis${rowId}">
+                    <span id="decrement" onClick="increment('decrease', '${rowId}')" class="decreaseClass hover">&#8595;&nbsp;&nbsp;</span><span id="amt${rowId}">${food.Amount}</span><span id="increment" onClick="increment('increase', '${rowId}')" class="increaseClass hover">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</span>
+                    <span>${food.Name}</span>
+                    <span onClick="deleteRow('${rowId}')" class="deleteClass hover">
+                        remove
                     </span>
-                    <hr>
                 </div>
             `
-            categories[key].forEach(function(food){
-                const rowId = JSON.parse(food._Id)._Id
-                const card = document.getElementById('card'+key);
-                card.innerHTML += `
-                    <div id="removeThis${rowId}">
-                        <span id="decrement" onClick="increment('decrease', '${rowId}')" class="decreaseClass hover">&#8595;&nbsp;&nbsp;</span><span id="amt${rowId}">${food.Amount}</span><span id="increment" onClick="increment('increase', '${rowId}')" class="increaseClass hover">&nbsp;&nbsp;&#8593;&nbsp;&nbsp;</span>
-                        <span>${food.Name}</span>
-                        <span onClick="deleteRow('${rowId}')" class="deleteClass hover">
-                            remove
-                        </span>
-                    </div>
-                `
-            })
-        }
-    })
-}
+        })
+    }
+})
 
 const increment = (f, id) => {
     let amt = document.getElementById('amt'+id);

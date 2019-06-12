@@ -8,7 +8,7 @@ class Navbar extends SPA {
           <a id="signInOut" class="signOut" spaPage="#SignIn">Sign in</a>
           <a class="signOut">About</a>
           <a class="signOut">Privacy</a>
-          <a href="http://emilyannemoses.com" class="signOut">&copy;Emily Anne Moses</a>
+          <a href="http://emilyannemoses.com" class="signOut">&copy; 2019 Emily Anne Moses</a>
         </div>
      `
     }

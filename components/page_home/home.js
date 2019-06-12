@@ -2,11 +2,13 @@ class Home extends SPA {
     html(){
       return /*html*/`
         <div id="home">
-            Poop
-            <div class="newItem" id="addItem"></div>
-            <div class="cardContainer" id="cardContainer"></div>
-            <div>${this._component('Navbar')}</div>
+          <div class="sheetsDiv">
+            This should be a list of all of the sheets a logged in user has made
+            <br>
+            <a spaPage="#Sheets">My sheet</a>
+          </div>
         </div>
+        <div>${this._component('Navbar')}</div>
       `
     }
 }

@@ -1,0 +1,16 @@
+#home {
+    margin: 100px;
+}
+
+.sheetsDiv {
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    margin: auto;
+    padding: 50px;
+}
+
+a {
+    text-decoration: underline;
+    cursor: pointer;
+}

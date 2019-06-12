@@ -25,13 +25,17 @@
             spa._start({
                 landingPage: "SignIn",
                 components: {
-                    "SignIn"    :    new SignIn,
+                    "SignIn"    :   new SignIn,
                     "Home"      :   new Home,
-                    "Navbar"  :    new Navbar
+                    "Navbar"    :   new Navbar,
+                    "Sheets"     :   new Sheets
                 }
             })
         }
     </script>
+
+    <link rel="stylesheet" href="components/page_sheets/sheets.css">
+    <script src='components/page_sheets/sheets.js'></script>
 
     <link rel="stylesheet" href="components/page_signIn/signIn.css">
     <script src='components/page_signIn/signIn.js'></script>
