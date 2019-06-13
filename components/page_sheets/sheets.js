@@ -1,5 +1,6 @@
 class Sheets extends SPA {
     html(){
+      loadSheet()
       return /*html*/`
       <div id="sheets">
         <div id="addItem" class="newItem"></div>

@@ -3,12 +3,24 @@
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 20px;
     text-align: center;
 }
 
-a {
+.xyz {
+    display: inline-block;
     text-decoration: none;
-    color: white;
+    padding: 10px;
+    color: firebrick;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.xyz:hover {
+    color: darkgray;
+}
+
+.authStat {
+    color: firebrick;
 }

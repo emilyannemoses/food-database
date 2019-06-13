@@ -4,11 +4,11 @@ class Navbar extends SPA {
     return /*html*/`
       <div class="navbar">
         <div id="auth-status" class="authStat"></div>
-        <a id="sign-in-or-out-button" spaPage="#Home"></a> |
-        <a id="revoke-access-button" spaPage="#SignIn"></a> |
-        <a class="signOut">About</a> | 
-        <a class="signOut">Privacy</a> |
-        <a href="http://emilyannemoses.com" class="signOut">&copy; 2019 Emily Anne Moses</a>
+        <div id="sign-in-or-out-button" class="xyz" spaPage="SignIn"></div>
+        <div id="revoke-access-button" class="xyz" spaPage="SignIn"></div>
+        <div class="signOut xyz">About</div>
+        <div class="signOut xyz">Privacy</div>
+        <a href="http://emilyannemoses.com" class="signOut xyz">&copy; 2019 Emily Anne Moses</a>
       </div>
     `
   }
