@@ -1,75 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
-    <script src="js/SPA.js"></script>
-    <link rel="stylesheet" href="./style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <title>Google Sheets Organization App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Food Database</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="root"></div>
-    <!-- <script>
-        function setSigninStatus(isSignedIn) {
-            var user = GoogleAuth.currentUser.get();
-            // Is signed in true/false: GoogleAuth.isSignedIn.Ab;
-            // First name: user.w3.ofa
-            // Last name: user.w3.wea
-            // Full name: user.w3.ig
-            var isAuthorized = user.hasGrantedScopes(SCOPE);
-            if (isAuthorized) {
-                document.getElementById('sign-in-or-out-button').innerHTML = 'Sign out';
-                document.getElementById('revoke-access-button').innerHTML = 'Revoke access';
-                document.getElementById('revoke-access-button').style.display = 'inline-block';
-                document.getElementById('auth-status').innerHTML = `${user.w3.ofa}, you are currently signed in and have granted access to this app.`;
-            } else {
-                document.getElementById('sign-in-or-out-button').innerHTML = 'Sign in';
-                document.getElementById('revoke-access-button').style.display = 'none';
-                document.getElementById('auth-status').innerHTML = 'You have not authorized this app or you are signed out.'
-            }
-        }
-    </script> -->
-    <script src="./js/oAuth.js"></script>
-    <!-- <script src="./config.js"></script> -->
-    <script async defer src="https://apis.google.com/js/api.js"
-          onload="this.onload=function(){};handleClientLoad()"
-          onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
-    <script src="./js/gas_crud.js"></script>
-    <script src="./js/gas_app.js"></script>
-    <script>
-        let user = {}
-        let isAuthorized = false
-        let update = window.onload = ()=>{
-            const spa =  new SPA()
-            spa._start({
-                landingPage: "SignIn",
-                components: {
-                    "SignIn"    :   new SignIn,
-                    "U"         :   new U,
-                    "Navbar"    :   new Navbar,
-                    "Sheets"    :   new Sheets
-                }
-            })
-            return spa._update
-
-        }
-    </script>
-
-    <link rel="stylesheet" href="components/navbar/navbar.css">
-    <script src='components/navbar/navbar.js'></script>
-
-    <link rel="stylesheet" href="components/page_sheets/sheets.css">
-    <script src='components/page_sheets/sheets.js'></script>
-
-    <link rel="stylesheet" href="components/page_signIn/signIn.css">
-    <script src='components/page_signIn/signIn.js'></script>
-
-    <link rel="stylesheet" href="components/page_user/user.css">
-    <script src='components/page_user/user.js'></script>
-
+  <div class="newItem" id="addItem"></div>
+  <div class="cardContainer" id="cardContainer">
+  </div>
+  <script src="./gas_crud.js"></script>
+  <script src="./gas_app.js"></script>
 </body>
 </html>

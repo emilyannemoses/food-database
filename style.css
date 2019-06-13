@@ -4,14 +4,12 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	font-family: Avenir;
 }
 
 body {
 	font-family: Avenir;
 	font-weight: 300;
 	color: white;
-	margin: 0;
 }
 
 input[type=text] {
@@ -134,14 +132,4 @@ div.cardContainer:hover .card:not(:hover) {
 
 .hover:hover {
 	color: rgb(255,255,225);
-}
-
-#sign-in-or-out-button {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-#revoke-access-button {
-    text-decoration: underline;
-    cursor: pointer;
 }
