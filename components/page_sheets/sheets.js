@@ -1,4 +1,7 @@
 class Sheets extends SPA {
+  resetPage = () => {
+    window.history.go();
+  }
     html(){
       loadSheet()
       return /*html*/`

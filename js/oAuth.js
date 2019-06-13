@@ -32,22 +32,22 @@ function initClient() {
         // Call handleAuthClick function when user clicks on
         //      "Sign In/Authorize" button.
         $('#sign-in-or-out-button').click(function() {
-        handleAuthClick();
+            handleAuthClick();
         });
         $('#revoke-access-button').click(function() {
-        revokeAccess();
+            revokeAccess();
         });
     });
 }
 
 function handleAuthClick() {
-if (GoogleAuth.isSignedIn.get()) {
-    // User is authorized and has clicked 'Sign out' button.
-    GoogleAuth.signOut();
-} else {
-    // User is not signed in. Start Google auth flow.
-    GoogleAuth.signIn();
-}
+    if (GoogleAuth.isSignedIn.get()) {
+        // User is authorized and has clicked 'Sign out' button.
+        GoogleAuth.signOut();
+    } else {
+        // User is not signed in. Start Google auth flow.
+        GoogleAuth.signIn();
+    }
 }
 
 function revokeAccess() {
@@ -56,19 +56,21 @@ function revokeAccess() {
 
 function setSigninStatus(isSignedIn) {
     var user = GoogleAuth.currentUser.get();
+    // Is signed in true/false: GoogleAuth.isSignedIn.Ab;
     // First name: user.w3.ofa
     // Last name: user.w3.wea
     // Full name: user.w3.ig
     var isAuthorized = user.hasGrantedScopes(SCOPE);
+    console.log(isAuthorized)
     if (isAuthorized) {
-        $('#sign-in-or-out-button').html('Sign out');
-        $('#revoke-access-button').html('Revoke access');
-        $('#revoke-access-button').css('display', 'inline-block');
-        $('#auth-status').html(`${user.w3.ofa}, you are currently signed in and have granted access to this app.`);
+        document.getElementById('sign-in-or-out-button').innerHTML = 'Sign out';
+        document.getElementById('revoke-access-button').innerHTML = 'Revoke access';
+        document.getElementById('revoke-access-button').style.display = 'inline-block';
+        document.getElementById('auth-status').innerHTML = `${user.w3.ofa}, you are currently signed in and have granted access to this app.`;
     } else {
-        $('#sign-in-or-out-button').html('Sign In');
-        $('#revoke-access-button').css('display', 'none');
-        $('#auth-status').html('You have not authorized this app or you are signed out.');
+        document.getElementById('sign-in-or-out-button').innerHTML = 'Sign in';
+        document.getElementById('revoke-access-button').style.display = 'none';
+        document.getElementById('auth-status').innerHTML = 'You have not authorized this app or you are signed out.'
     }
 }
 

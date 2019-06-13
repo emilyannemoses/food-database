@@ -1,10 +1,11 @@
 class Navbar extends SPA {
-  
-  html() {
+  userName = 'Emily';
+  html(userName) {
+    console.log(userName)
     return /*html*/`
       <div class="navbar">
         <div id="auth-status" class="authStat"></div>
-        <div id="sign-in-or-out-button" class="xyz" spaPage="SignIn"></div>
+        <div id="sign-in-or-out-button" class="xyz"></div>
         <div id="revoke-access-button" class="xyz" spaPage="SignIn"></div>
         <div class="signOut xyz">About</div>
         <div class="signOut xyz">Privacy</div>
