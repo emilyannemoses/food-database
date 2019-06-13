@@ -64,17 +64,17 @@ function setSigninStatus(isSignedIn) {
     console.log(isAuthorized)
     if (isAuthorized) {
         // window.location.hash = ""
-        window.location.hash = "#U"
-        update()
-        // document.getElementById('sign-in-or-out-button').innerHTML = 'Sign out';
-        // document.getElementById('revoke-access-button').innerHTML = 'Revoke access';
-        // document.getElementById('revoke-access-button').style.display = 'inline-block';
-        // document.getElementById('auth-status').innerHTML = `${user.w3.ofa}, you are currently signed in and have granted access to this app.`;
+        // window.location.hash = "#U"
+        // update()
+        document.getElementById('sign-in-or-out-button').innerHTML = 'Sign out';
+        document.getElementById('revoke-access-button').innerHTML = 'Revoke access';
+        document.getElementById('revoke-access-button').style.display = 'inline-block';
+        document.getElementById('auth-status').innerHTML = `${user.w3.ofa}, you are currently signed in and have granted access to this app.`;
     } else {
-        window.location.hash = "#SignIn"
-        // document.getElementById('sign-in-or-out-button').innerHTML = 'Sign in';
-        // document.getElementById('revoke-access-button').style.display = 'none';
-        // document.getElementById('auth-status').innerHTML = 'You have not authorized this app or you are signed out.'
+        // window.location.hash = "#SignIn"
+        document.getElementById('sign-in-or-out-button').innerHTML = 'Sign in';
+        document.getElementById('revoke-access-button').style.display = 'none';
+        document.getElementById('auth-status').innerHTML = 'You have not authorized this app or you are signed out.'
     }
 }
 

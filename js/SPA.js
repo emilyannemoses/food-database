@@ -19,7 +19,8 @@ class SPA {
   
       window.addEventListener("hashchange", ()=>{
         let hash = window.location.hash.split("#")[1] || this._landingPage
-        if (hash === this._landingPage) { history.replaceState(null, null, " ")
+        if (hash === this._landingPage) { 
+          history.replaceState(null, null, " ")
         } else { window.location.hash = '#'+hash }
         this._currentPage = hash
         this._go(hash)

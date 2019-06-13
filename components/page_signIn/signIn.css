@@ -34,3 +34,8 @@ a {
 a:hover {
   color: darkgray;
 }
+
+.styleText {
+  letter-spacing: normal;
+  text-align:center;
+}
