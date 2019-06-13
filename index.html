@@ -12,8 +12,28 @@
 </head>
 <body>
     <div id="root"></div>
+    <!-- <script>
+        function setSigninStatus(isSignedIn) {
+            var user = GoogleAuth.currentUser.get();
+            // Is signed in true/false: GoogleAuth.isSignedIn.Ab;
+            // First name: user.w3.ofa
+            // Last name: user.w3.wea
+            // Full name: user.w3.ig
+            var isAuthorized = user.hasGrantedScopes(SCOPE);
+            if (isAuthorized) {
+                document.getElementById('sign-in-or-out-button').innerHTML = 'Sign out';
+                document.getElementById('revoke-access-button').innerHTML = 'Revoke access';
+                document.getElementById('revoke-access-button').style.display = 'inline-block';
+                document.getElementById('auth-status').innerHTML = `${user.w3.ofa}, you are currently signed in and have granted access to this app.`;
+            } else {
+                document.getElementById('sign-in-or-out-button').innerHTML = 'Sign in';
+                document.getElementById('revoke-access-button').style.display = 'none';
+                document.getElementById('auth-status').innerHTML = 'You have not authorized this app or you are signed out.'
+            }
+        }
+    </script> -->
     <script src="./js/oAuth.js"></script>
-    <script src="./config.js"></script>
+    <!-- <script src="./config.js"></script> -->
     <script async defer src="https://apis.google.com/js/api.js"
           onload="this.onload=function(){};handleClientLoad()"
           onreadystatechange="if (this.readyState === 'complete') this.onload()">
@@ -21,7 +41,9 @@
     <script src="./js/gas_crud.js"></script>
     <script src="./js/gas_app.js"></script>
     <script>
-        window.onload = ()=>{
+        let user = {}
+        let isAuthorized = false
+        let update = window.onload = ()=>{
             const spa =  new SPA()
             spa._start({
                 landingPage: "SignIn",
@@ -32,6 +54,8 @@
                     "Sheets"    :   new Sheets
                 }
             })
+            return spa._update
+
         }
     </script>
 

@@ -1,9 +1,12 @@
 class U extends SPA {
     html(){
+      let userName = user.w3 || {};
+      let firstName = userName.ofa || null;
+      let lastName = userName.wea || null;
       return /*html*/`
         <div id="user">
           <div class="sheetsDiv">
-            This should be a list of all of the sheets a logged in user has made
+            Welcome ${firstName}${lastName}
             <br>
             <div spaPage="Sheets" class="userSheet">User sheets</div>
           </div>

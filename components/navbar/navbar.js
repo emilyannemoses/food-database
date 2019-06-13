@@ -1,7 +1,5 @@
 class Navbar extends SPA {
-  userName = 'Emily';
-  html(userName) {
-    console.log(userName)
+  html() {
     return /*html*/`
       <div class="navbar">
         <div id="auth-status" class="authStat"></div>

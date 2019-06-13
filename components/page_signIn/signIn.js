@@ -1,7 +1,7 @@
 class SignIn extends SPA {
-  redirectIt() { // This is just for local development only. The redirect URL is saved in the Google console for the live APP
-    window.location.href = 'http://localhost:5000/#U'
-  }
+  // redirectIt() { // This is just for local development only. The redirect URL is saved in the Google console for the live APP
+  //   window.location.href = 'http://localhost:5000/#U'
+  // }
     html(){
       return /*html*/`
         <div id="signIn">

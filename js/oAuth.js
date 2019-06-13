@@ -55,25 +55,142 @@ function revokeAccess() {
 }
 
 function setSigninStatus(isSignedIn) {
-    var user = GoogleAuth.currentUser.get();
+    user = GoogleAuth.currentUser.get();
     // Is signed in true/false: GoogleAuth.isSignedIn.Ab;
     // First name: user.w3.ofa
     // Last name: user.w3.wea
     // Full name: user.w3.ig
-    var isAuthorized = user.hasGrantedScopes(SCOPE);
+    isAuthorized = user.hasGrantedScopes(SCOPE);
     console.log(isAuthorized)
     if (isAuthorized) {
-        document.getElementById('sign-in-or-out-button').innerHTML = 'Sign out';
-        document.getElementById('revoke-access-button').innerHTML = 'Revoke access';
-        document.getElementById('revoke-access-button').style.display = 'inline-block';
-        document.getElementById('auth-status').innerHTML = `${user.w3.ofa}, you are currently signed in and have granted access to this app.`;
+        // window.location.hash = ""
+        window.location.hash = "#U"
+        update()
+        // document.getElementById('sign-in-or-out-button').innerHTML = 'Sign out';
+        // document.getElementById('revoke-access-button').innerHTML = 'Revoke access';
+        // document.getElementById('revoke-access-button').style.display = 'inline-block';
+        // document.getElementById('auth-status').innerHTML = `${user.w3.ofa}, you are currently signed in and have granted access to this app.`;
     } else {
-        document.getElementById('sign-in-or-out-button').innerHTML = 'Sign in';
-        document.getElementById('revoke-access-button').style.display = 'none';
-        document.getElementById('auth-status').innerHTML = 'You have not authorized this app or you are signed out.'
+        window.location.hash = "#SignIn"
+        // document.getElementById('sign-in-or-out-button').innerHTML = 'Sign in';
+        // document.getElementById('revoke-access-button').style.display = 'none';
+        // document.getElementById('auth-status').innerHTML = 'You have not authorized this app or you are signed out.'
     }
 }
 
 function updateSigninStatus(isSignedIn) {
     setSigninStatus();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+API_KEY = 'AIzaSyD8bnI_HZqGLiuUuxvpQPgo4b2a4-J3JPM';
+CLIENT_ID = '575322948483-4jbs6767t559anqfgi2and82rctt0g1s.apps.googleusercontent.com';
