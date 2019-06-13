@@ -1,63 +1,74 @@
+:root {
+	--universal-background:
+		url(https://images.unsplash.com/photo-1478369402113-1fd53f17e8b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)
+		no-repeat
+		center
+		center
+		fixed;
+	--universal-background-size: cover;
+	--universal-color: white;
+	--universal-cursor: pointer;
+	--universal-font: Avenir;
+	--universal-font-weight: 300;
+	--universal-hover-color: rgb(255,255,225);
+	--universal-text-align: center;
+	--universal-width: 90%;
+	--input-border: 0;
+	--input-padding: 0;
+	--input-margin: 10px;
+	--input-background: transparent;
+	--input-letter-spacing: 0.5em;
+	--input-font-size: 20px;
+	--input-existing-border: 2px solid white;
+	--button-background-color: rgba(255, 255, 255, 0.4);
+	--button-text-color: #202020;
+	--button-text-shadow: 0px 1px white;
+	--reset-button-margin-top: 5px;
+	--plus-button-color: green;
+	--decrease-button-color: orangered;
+	--increase-button-color: greenyellow;
+	--delete-button-color: firebrick;
+}
+
 html { 
-	background: url(https://images.unsplash.com/photo-1478369402113-1fd53f17e8b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background: var(--universal-background);
+	-webkit-background-size: var(--universal-background-size);
+	-moz-background-size: var(--universal-background-size);
+	-o-background-size: var(--universal-background-size);
+	background-size: var(--universal-background-size);
+	color: var(--universal-color);
+	font-family: var(--universal-font);
+	font-weight: var(--universal-font-weight);
 }
 
-body {
-	font-family: Avenir;
-	font-weight: 300;
-	color: white;
+input[type=text], input[type=number] {
+	background: var(--input-background);
+	border: var(--input-border);
+	border-bottom: var(--input-existing-border);
+	font-size: var(--input-font-size);
+	letter-spacing: var(--input-letter-spacing);
+	margin: var(--input-margin);
+	padding: var(--input-padding);
+	text-align: var(--universal-text-align);
 }
 
-input[type=text] {
-	border: 0;
-	padding: 0;
-	margin: 10px;
-	background: transparent;
-	letter-spacing: .5em;
-	font: 20px Avenir;
-	text-align: center;
-	border-bottom: 2px solid white;
-}
-
-input[type=number] {
-	border: 0;
-	padding: 0;
-	margin: 10px;
-	background: transparent;
-	letter-spacing: .5em;
-	font: 20px Avenir;
-	text-align: center;
-	border-bottom: 2px solid white;
-}
-
-input[type=submit] {
-	border: 2px solid white;
-	background-color: rgba(255, 255, 255, 0.4);
-	color: #202020;
-	letter-spacing: 1em;
-	width: 60%;
-	cursor: pointer;
-	text-shadow: 0px 1px white;
+input[type=submit], input[type=reset] {
+	border: var(--input-existing-border);
+	background-color: var(--button-background-color);
+	color: var(--button-text-color);
+	cursor: var(--universal-cursor);
+	letter-spacing: var(--input-letter-spacing);
+	text-shadow: var(--button-text-shadow);
+	width: var(--universal-width);
 }
 
 input[type=reset] {
-	border: 2px solid white;
-	background-color: rgba(255, 255, 255, 0.4);
-	color: #202020;
-	letter-spacing: 1em;
-	width: 60%;
-	cursor: pointer;
-	text-shadow: 0px 1px white;
-	margin-top: 5px;
+	margin-top: var(--reset-button-margin-top);
 }
 
 input::placeholder {
-	text-align: center;
 	color: white;
+	text-align: var(--universal-text-align);
 	text-shadow: 0px 1px #202020;
   }
 
@@ -69,29 +80,59 @@ input::placeholder {
 }
 
 .newItem {
-	width: 90%;
-	margin: auto;
-	text-align: center;
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: var(--button-background-color);
 	padding-bottom: 20px;
+	margin: auto;
+	text-align: var(--universal-text-align);
+	width: var(--universal-width);
 }
+
+.plusClass {
+	color: var(--plus-button-color);
+	cursor: var(--universal-cursor);
+	float: right;
+}
+
+.decreaseClass {
+	color: var(--decrease-button-color);
+	cursor: var(--universal-cursor);
+}
+
+.increaseClass {
+	color: var(--increase-button-color);
+	cursor: var(--universal-cursor);
+}
+
+.deleteClass {
+	color: var(--delete-button-color);
+	cursor: var(--universal-cursor);
+	float: right;
+}
+
+.hover:hover {
+	color: var(--universal-hover-color);
+}
+
+/*********************************
+Special responsive cards CSS below
+*********************************/
 
 .cardContainer {
 	column-width: 300px;
 	column-gap: 15px;
-	width: 90%;
 	max-width: 1200px;
 	margin: 50px auto;
+	width: var(--universal-width);
 }
 
 div.cardContainer .card {
 	-webkit-column-break-inside: avoid !important;
 	background: #202020;
-	margin: 15px auto;
-	padding: 10px;
 	border: 2px solid gray;
-	transition: opacity .2s ease-in-out;
+	margin: 15px auto;
 	overflow: scroll;
+	padding: 10px;
+	transition: opacity .2s ease-in-out;
 }
 
 div.cardContainer .card:nth-child(1) {
@@ -99,37 +140,10 @@ div.cardContainer .card:nth-child(1) {
 }
 
 div.cardContainer .card .caption {
-	font-size: 16px;
 	color: white;
+	font-size: 16px;
 }
 
 div.cardContainer:hover .card:not(:hover) {
 	opacity: 0.8;
-}
-
-.plusClass {
-	float: right;
-	color: green;
-	cursor: pointer;
-}
-
-.decreaseClass {
-	color: orangered;
-	cursor: pointer;
-}
-
-.increaseClass {
-	color: greenyellow;
-	cursor: pointer;
-}
-
-.deleteClass {
-	float: right;
-	color: firebrick;
-	font-size: 12px;
-	cursor: pointer;
-}
-
-.hover:hover {
-	color: rgb(255,255,225);
 }
