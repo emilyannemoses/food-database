@@ -1,10 +1,11 @@
 :root {
 	--universal-background:
-		url(https://images.unsplash.com/photo-1478369402113-1fd53f17e8b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)
+		#303030;
+		/* url(https://images.unsplash.com/photo-1478369402113-1fd53f17e8b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)
 		no-repeat
 		center
 		center
-		fixed;
+		fixed; */
 	--universal-background-size: cover;
 	--universal-color: white;
 	--universal-cursor: pointer;
@@ -30,7 +31,7 @@
 	--delete-button-color: firebrick;
 }
 
-html { 
+html {
 	background: var(--universal-background);
 	-webkit-background-size: var(--universal-background-size);
 	-moz-background-size: var(--universal-background-size);
