@@ -1,4 +1,4 @@
-var _gas = new GAS('https://script.google.com/macros/s/AKfycbyQcPNaZG-xO8gZapSNUDvrvCGnTSHhKcks_ZBJWrE70MJIEwY/exec')
+var _gas = new GAS('https://script.google.com/macros/s/AKfycbw_j4ssL-8s7sX_tV_JxUN5zpbGa357z9_0hdkxjv-EEkAxTVlQEgzpOFZo1vstKqhl/exec')
 
 window.onload = () => {
     _gas.crud( 'READ' , 'sheet', {
@@ -23,7 +23,7 @@ window.onload = () => {
             cardContainer.innerHTML += `
                 <div class="card" id="card${key}">
                     <span class="heading">
-                        ${key} 
+                        ${key}
                         <span onClick="addOne('${key}')" class="plusClass hover">+</span>
                     </span>
                     <hr>
